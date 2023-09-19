@@ -1,0 +1,51 @@
+
+ALGORITHM algo_recheche
+VAR
+  length, num_word, vowel: INTEGER;  
+  ch: STRING;
+  i: INTEGER;
+
+BEGIN
+  length := 0;
+  num_word := 0;
+  vowel := 0;
+
+  REPEAT
+  
+    READ(ch[i]);
+    IF ch[i] = "." THEN
+      BREAK;  
+    END_IF
+    length := length + 1;
+  UNTIL FALSE;  
+
+ 
+  WRITE(length);
+
+
+
+  FOR i FROM 1 TO length STEP 1 DO
+    IF ch[i] = " " THEN
+      num_word := num_word + 1;
+    END_IF
+  END_FOR
+
+WRITE(num_word );
+ 
+  FOR i FROM 1 TO length STEP 1 DO
+    CASE ch[i] OF
+      "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y":
+        vowel := vowel + 1;
+      break
+        
+    END_CASE
+  END_FOR
+
+
+  
+  WRITE(vowel);
+
+END
+
+
+
